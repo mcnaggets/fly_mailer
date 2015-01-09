@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import java.lang.String?>
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="by.fly.ui.controller.ApplicationController">
+    <stylesheets>
+        <String fx:value="/css/application.css"/>
+    </stylesheets>
+    <AnchorPane>
+        <FlowPane AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+                  AnchorPane.topAnchor="0" styleClass="padding10" hgap="10" vgap="10">
+            <Text text="Добро пожаловать"
+                  id="welcome-text"/>
+            <Button
+                    fx:id="sendMail" text="sendMail1"/>
+            <Button
+                    fx:id="sendMail2" text="sendMail2"/>
+        </FlowPane>
+
+    </AnchorPane>
+</StackPane>
