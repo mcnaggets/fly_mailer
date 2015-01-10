@@ -10,16 +10,18 @@
         <String fx:value="/css/settings.css"/>
     </stylesheets>
 
-    <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-              AnchorPane.topAnchor="0.0"
-              styleClass="padding10">
+    <GridPane AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+              AnchorPane.topAnchor="0">
         <columnConstraints>
             <ColumnConstraints percentWidth="20"/>
             <ColumnConstraints percentWidth="80"/>
         </columnConstraints>
 
-        <Label text="Клиент"/>
-        <TextField fx:id="printerCombo" GridPane.columnIndex="1"/>
+        <Label text="Нименование клиента"/>
+        <TextField fx:id="clientName" GridPane.columnIndex="1" />
+
+        <Label text="Контактный телефон" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="clientPhone" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
     </GridPane>
 </AnchorPane>
