@@ -3,17 +3,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 <?import java.lang.String?>
-<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="by.fly.ui.controller.ApplicationController">
+<?import javafx.scene.control.ProgressIndicator?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="by.fly.ui.controller.ApplicationController">
     <stylesheets>
         <String fx:value="/css/application.css"/>
     </stylesheets>
-    <AnchorPane>
-        <FlowPane AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
-                  AnchorPane.topAnchor="0" styleClass="padding10" hgap="10" vgap="10">
+    <StackPane AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+               AnchorPane.topAnchor="0">
+        <FlowPane>
             <Text text="Добро пожаловать" id="welcome-text"/>
             <Button onAction="#changeSettings" text="Настройки"/>
             <Button onAction="#sendMail" text="Отравить письмо"/>
         </FlowPane>
-
-    </AnchorPane>
-</StackPane>
+        <ProgressIndicator fx:id="progressIndicator" progress="-1"/>
+    </StackPane>
+</AnchorPane>

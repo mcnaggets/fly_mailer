@@ -5,7 +5,12 @@
     -fx-font-size: 20;
 }
 
-.button {
+Button {
     -fx-pref-height: 50;
     -fx-pref-width: 200;
+}
+
+FlowPane {
+    -fx-hgap: 10;
+    -fx-vgap: 10;
 }

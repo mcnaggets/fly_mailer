@@ -25,7 +25,6 @@ dependencies {
 
     compile "org.controlsfx:controlsfx:8.20.8"
 
-//    compile "javax.mail:javax.mail-api:1.5.2"
     compile "javax.mail:mail:1.4.7"
 }
 
