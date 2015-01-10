@@ -23,5 +23,8 @@
         <Label text="Контактный телефон" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
         <TextField fx:id="clientPhone" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
+        <Label text="Е-mail" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="toEmail" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
     </GridPane>
 </AnchorPane>

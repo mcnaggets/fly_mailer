@@ -15,12 +15,11 @@ public class MailConfig {
             @Value("${mail.password}") String password) {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.gmail.com");
-        mailSender.setPort(465);
+        mailSender.setPort(587);
         mailSender.setUsername(username);
         mailSender.setPassword(password);
-        mailSender.getJavaMailProperties().setProperty("mail.transport.protocol", "smtp");
         mailSender.getJavaMailProperties().setProperty("mail.smtp.auth", "true");
-        mailSender.getJavaMailProperties().setProperty("mail.smtp.starttls.enable", "smtp");
+        mailSender.getJavaMailProperties().setProperty("mail.smtp.starttls.enable", "true");
         return mailSender;
     }
 

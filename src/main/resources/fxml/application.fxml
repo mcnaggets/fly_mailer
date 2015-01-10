@@ -10,12 +10,9 @@
     <AnchorPane>
         <FlowPane AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
                   AnchorPane.topAnchor="0" styleClass="padding10" hgap="10" vgap="10">
-            <Text text="Добро пожаловать"
-                  id="welcome-text"/>
-            <Button onAction="#changeSettings"
-                    text="Настройки"/>
-            <Button
-                    fx:id="sendMail2" text="sendMail2"/>
+            <Text text="Добро пожаловать" id="welcome-text"/>
+            <Button onAction="#changeSettings" text="Настройки"/>
+            <Button onAction="#sendMail" text="Отравить письмо"/>
         </FlowPane>
 
     </AnchorPane>

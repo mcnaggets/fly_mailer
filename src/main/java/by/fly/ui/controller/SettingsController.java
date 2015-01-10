@@ -18,6 +18,7 @@ public class SettingsController extends AbstractController {
 
     public TextField clientName;
     public TextField clientPhone;
+    public TextField toEmail;
 
     @Autowired
     private SettingsService settingsService;
@@ -25,15 +26,17 @@ public class SettingsController extends AbstractController {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
-        clientName.setText(settingsService.getProperties().getProperty(MAIL_PROPERTY_PREFIX + clientName.getId()));
-        clientPhone.setText(settingsService.getProperties().getProperty(MAIL_PROPERTY_PREFIX + clientPhone.getId()));
+        clientName.setText(settingsService.getProperty(MAIL_PROPERTY_CLIENT_NAME));
+        clientPhone.setText(settingsService.getProperty(MAIL_PROPERTY_CLIENT_PHONE));
+        toEmail.setText(settingsService.getProperty(MAIL_PROPERTY_MAIL_TO));
     }
 
     public void saveSettings() {
         try {
             Properties properties = new Properties();
-            properties.put(MAIL_PROPERTY_PREFIX + clientName.getId(), clientName.getText());
-            properties.put(MAIL_PROPERTY_PREFIX + clientPhone.getId(), clientPhone.getText());
+            properties.put(MAIL_PROPERTY_CLIENT_NAME, clientName.getText());
+            properties.put(MAIL_PROPERTY_CLIENT_PHONE, clientPhone.getText());
+            properties.put(MAIL_PROPERTY_MAIL_TO, toEmail.getText());
             settingsService.saveSettings(properties);
         } catch (IOException e) {
             throw new UncheckedIOException(e);
