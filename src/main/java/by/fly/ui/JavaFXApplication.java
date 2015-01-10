@@ -1,9 +1,9 @@
 package by.fly.ui;
 
+import by.fly.ui.controller.Controller;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,10 +15,19 @@ public class JavaFXApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Thread.setDefaultUncaughtExceptionHandler((t, x) -> LOGGER.error(x.getMessage(), x));
-        primaryStage.setTitle("Fly mailer");
-        Pane myPane = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/application.fxml"));
-        Scene myScene = new Scene(myPane, 800, 600);
-        primaryStage.setScene(myScene);
+        loadSettingsController();
+        loadApplicationController(primaryStage);
+    }
+
+    private void loadSettingsController() {
+        SpringFXMLLoader.load("/fxml/settings.fxml");
+    }
+
+    private void loadApplicationController(Stage primaryStage) {
+        Controller controller = SpringFXMLLoader.load("/fxml/application.fxml");
+        Scene scene = new Scene((Parent) controller.getView(), 800, 600);
+        primaryStage.setTitle(SpringFXMLLoader.APPLICATION_CONTEXT.getEnvironment().getProperty("application.name"));
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
